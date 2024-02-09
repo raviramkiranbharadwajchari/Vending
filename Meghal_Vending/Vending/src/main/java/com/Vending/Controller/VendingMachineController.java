@@ -34,5 +34,4 @@ public class VendingMachineController {
         return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
     }
 
-    // Other endpoints for transactions, inventory, etc.
 }
