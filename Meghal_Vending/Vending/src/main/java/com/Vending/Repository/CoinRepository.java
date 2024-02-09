@@ -1,0 +1,11 @@
+package com.Vending.Repository;
+
+import com.Vending.Entity.Coin;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CoinRepository extends JpaRepository<Coin, Long> {
+    Coin findByDenomination(String denomination);
+
+}
