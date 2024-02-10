@@ -22,6 +22,12 @@ public class VendingMachineController {
         return ResponseEntity.ok(coins);
     }
 
+    @PostMapping("/coins")
+    public ResponseEntity<Coin> createCoin(@RequestBody Coin coin) {
+        Coin savedCoin = vendingMachineService.addCoin(coin);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedCoin);
+    }
+
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = vendingMachineService.getAllProducts();
@@ -33,5 +39,4 @@ public class VendingMachineController {
         Product savedProduct = vendingMachineService.addProduct(product);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedProduct);
     }
-
 }

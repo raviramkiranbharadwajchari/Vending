@@ -78,4 +78,8 @@ public class VendingMachineService {
     public Product addProduct(Product product) {
         return productRepository.save(product);
     }
+
+    public Coin addCoin(Coin coin) {
+        return coinRepository.save(coin);
+    }
 }
